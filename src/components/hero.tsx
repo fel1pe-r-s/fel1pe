@@ -9,12 +9,14 @@ export function Hero() {
           alt="foto de perfil"
           width={300}
           height={300}
-          className="object-contain "
+          className="object-contain"
         />
       </div>
       <div className="md:row-start-1 md:col-start-1  md:col-end-4">
-        <h1>Oi, eu sou Felipe</h1>
-        <p>
+        <h1 className="text-4xl font-semibold md:font-bold md:text-5xl md:tracking-[-0.02em] lg:text-6xl lg:leading-[72px] text-gray-300">
+          Oi, eu sou Felipe
+        </h1>
+        <p className="text-sm">
           Sou um desenvolvedor front end com ênfase em criar experiências
           digitais excepcionais, rápidas, acessíveis, visualmente atraentes e
           responsivas. Nos últimos 3 anos, tenho me especializado em tecnologias

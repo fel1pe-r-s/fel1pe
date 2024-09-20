@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Asap } from "next/font/google";
+import Header from "@/components/header";
 
 const asap = Asap({
   variable: "--font-asap",
@@ -20,7 +21,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${asap.variable} antialiased`}>{children}</body>
+      <body className={`${asap.variable} antialiased`}>
+        <main className="flex flex-col max-w-[1440px] mx-auto min-h-screen">
+          <Header />
+          {children}
+        </main>
+        <footer className="text-center bg-gray-900 h-16 p-6">
+          <div>
+            <p className="text-gray-200 text-normal">
+              <span className="w-4 h-4">&copy; </span> 2024 | Felipe Silva
+            </p>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
