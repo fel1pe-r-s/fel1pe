@@ -1,6 +1,6 @@
 "use client";
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
-import ResponsiveMenu from "./responsive-menu";
+import ResponsiveMenu from "./menu";
 
 export default function Header() {
   return (
