@@ -8,6 +8,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 type MenuItem = {
   isMobile?: boolean;
@@ -20,17 +21,17 @@ function MenuItems({ isMobile = false, href, name }: MenuItem) {
     <>
       {isMobile ? (
         <DrawerClose asChild>
-          <a
+          <Link
             href={href}
-            className="block py-2 text-lg font-medium hover:text-popover"
+            className="block py-2 text-lg font-medium  hover:text-popover"
           >
             {name}
-          </a>
+          </Link>
         </DrawerClose>
       ) : (
-        <a href={href} className="text-sm font-medium hover:text-popover">
+        <Link href={href} className="text-sm font-medium hover:text-popover">
           {name}
-        </a>
+        </Link>
       )}
     </>
   );
@@ -51,7 +52,7 @@ export default function ResponsiveMenu() {
           <div className="mx-auto w-full max-w-sm">
             <nav className="flex flex-col space-y-4 p-4">
               <MenuItems isMobile href="#" name="Trabalhos" />
-              <MenuItems isMobile href="#" name="Contato" />
+              <MenuItems isMobile href="#contact" name="Contato" />
               <Separator className="my-2" />
               <DrawerClose asChild>
                 <Button
@@ -70,7 +71,7 @@ export default function ResponsiveMenu() {
       {/* Desktop Menu */}
       <nav className="hidden md:flex items-center space-x-4">
         <MenuItems href="#" name="Trabalhos" />
-        <MenuItems href="#" name="Contato" />
+        <MenuItems href="#contact" name="Contato" />
         <Separator orientation="vertical" className="h-6" />
         <Button variant="secondary" size="sm" className="rounded-xl">
           <DownloadSimple className="mr-2 h-4 w-4" /> Download

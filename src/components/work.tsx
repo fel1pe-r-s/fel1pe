@@ -3,35 +3,22 @@ import { useEffect } from "react";
 import Projects from "./carousel";
 import { ImageObject, useCarousel } from "./carousel-context";
 import { Tag } from "./tag";
+import { LinkSimple } from "@phosphor-icons/react";
 
 // Simula uma função de busca de API
 const fetchImages = async (): Promise<ImageObject[]> => {
   // Simula um atraso de rede
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  /* await new Promise((resolve) => setTimeout(resolve, 1000)); */
 
   return [
     {
       id: "1",
-      title: "Paisagem Montanhosa",
+      title: "Focus Timer",
       description:
-        "Uma bela vista de montanhas cobertas de neve ao pôr do sol.",
-      imageUrl: "/picture.svg",
-      tags: ["montanhas", "neve", "pôr do sol"],
-    },
-    {
-      id: "2",
-      title: "Praia Tropical",
-      description: "Águas cristalinas e areia branca em uma praia paradisíaca.",
-      imageUrl: "/picture.svg",
-      tags: ["praia", "mar", "tropical"],
-    },
-    {
-      id: "3",
-      title: "Floresta Densa",
-      description:
-        "Um caminho sereno através de uma floresta verde e exuberante.",
-      imageUrl: "/picture.svg",
-      tags: ["floresta", "natureza", "verde"],
+        "'Focus Timer', esse é um desafio proposto pelo time da rocketseat um projeto de timer que utiliza ES6 modules, estados, variáveis, callback functions e um modo escuro / claro.",
+      imageUrl: "/focusTime.jpg",
+      tags: ["Git", "javaScript", "Netlify"],
+      link: "https://desafio-focus-time.netlify.app/",
     },
   ];
 };
@@ -87,6 +74,19 @@ export function Work() {
                 {selectedImage.tags.map((tag, index) => (
                   <Tag key={index}>{tag}</Tag>
                 ))}
+              </div>
+              <div className="flex gap-2">
+                {selectedImage.link && (
+                  <a
+                    href={selectedImage.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-2 items-center justify-center bg-gray-900 rounded-sm px-4 py-2 hover:text-popover transition-colors duration-300"
+                  >
+                    <LinkSimple size={20} />
+                    <span>Ver projeto</span>
+                  </a>
+                )}
               </div>
             </>
           )}

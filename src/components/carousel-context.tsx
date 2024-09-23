@@ -8,6 +8,7 @@ export type ImageObject = {
   description: string;
   imageUrl: string;
   tags: string[];
+  link: string | null;
 };
 
 type CarouselState = {
