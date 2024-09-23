@@ -1,24 +1,15 @@
 "use client";
-
+import { RepoData } from "@/@types/repoData";
 import React, { createContext, useContext, useReducer, Dispatch } from "react";
-
-export type ImageObject = {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  tags: string[];
-  link: string | null;
-};
 
 type CarouselState = {
   selectedImageId: string | null;
-  images: ImageObject[];
+  images: RepoData[];
 };
 
 type CarouselAction =
   | { type: "SET_SELECTED_IMAGE"; payload: string }
-  | { type: "SET_IMAGES"; payload: ImageObject[] };
+  | { type: "SET_IMAGES"; payload: RepoData[] };
 
 type CarouselContextType = {
   state: CarouselState;
